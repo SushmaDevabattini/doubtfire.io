@@ -1,16 +1,16 @@
-# Doubtfire Website
+## Doubtfire Website
 Doubtfire is an open-source, innovative, learning management system designed to put the student first.
-
-![Sample Website](webpage.png)
 
 Inside the webiste, you can find :
 1. Installation guides for Doubtfire.
 2. User guides.
 3. Extend Doubtfire and Contributions.
+
 [Go to Website](https://doubtfire-lms.github.io/doubtfire.io/)
 
-## How did we create the website?
-## Getting started
+## How its done?
+
+## Getting started 
 
 Start by ensuring you have ruby on your system. You **must** install [rbenv](https://github.com/rbenv/rbenv) to keep your ruby versions under control. Refer to rbenv's [installation guide](https://github.com/rbenv/rbenv#installation) on how to do so.
 
@@ -28,7 +28,7 @@ $ gem install bundler
 $ bundle install
 ```
 
-#### El Capitan and OpenSSL issues
+## El Capitan and OpenSSL issues
 
 If you are using OS X El Capitan, install OpenSSL using `brew` and set the bundle
 config to point to this install:
@@ -37,25 +37,57 @@ config to point to this install:
 $ brew install openssl
 $ bundle config build.eventmachine --with-cppflags="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib"
 ```
-## create guides
-To create a new guide, navigate to the directory where you cloned the repository:
-**cd /path/to/doubtfire.io**
-Guides are categorised using a tag. Once you have decided for one or more tag for your guide, execute the following command:
-**bundle exec middleman article "[Name of Guide]" -t [tags]**
-Once you execute this command, you will see that the guide you have named appears under source/articles/guides using the current day’s date. For example, 
-**source/articles/guides/20XX-XX-XX-my-guide.html.md.**
-create guides as follows:
+## creating guides
 
-1. `data/global/footer.yml`
-1. `data/landing_page.yml`
-1. `source/layouts/index.html.erb`
-1. `source/partials/_navbar.html.erb`
-1. `source/articles/contributing/index.html.md.erb`
-1. `source/articles/index.html.erb`
-1. `source/articles/installation/{mac,ubuntu,windows}/index.html.erb`
-Add theme colors and typography under `stylesheets/modules/_{colors,typography}.scss`.
- Read more on >> [writing guides](https://doubtfire-lms.github.io/doubtfire.io/articles/contributing/)
+Guides are categorised using a tag. Once you have decided for one or more tag for your guide, execute the following command:
+
+**bundle exec middleman article "[Name of Guide]" -t [tags]**
+
+Once you execute this command, you will see that the guide you have named appears under source/articles/guides using the current day’s date. For example, 
+
+**source/articles/guides/20XX-XX-XX-my-guide.html.md.**
  
+##Adding Required Frontmatter
+Open this file in a text editor and you will see the following:
+
+---
+
+title: My Guide
+date: 2017-12-11 06:44 UTC
+tags: tag1,tag2
+
+---
+**Note**: All tags should be in lowercase.
+The data separated by the three dashes (---) is known as the frontmatter of the guide. This contains metadata about the guide, which (by default) includes the guide name, date created, and associated tags.
+
+**Note**: You must add the following keys to the frontmatter:
+author: your full name,
+author_url: a URL to your GitHub profile or personal website, and
+summary: a summary of the guide that should be no more than two to three lines and should embody the gist of the guide.
+
+##Write the guide
+Underneath the bottom three dashes, you may begin writing your guide using Github-flavoured Markdown. You won’t need to add the title of the guide as a Heading 1 (<h1> or #) as this is automatically added for you.
+
+**Note**: When writing your guide, ensure you only use Heading 2 to Heading 6 (<h2> … <h6> or ## … ######). This is because Heading 1 is reserved for the guide’s title.
+Remember to keep the language friendly, include examples and ensure it is high quality.
+
+If you would like to include images in your guide, host them on Imgur as this will ensure they exist permanently (unlike temporary image hosting services such as puush).
+
+##Test the guide
+After you have finished writing, it’s time to make sure everything looks right!
+
+From your terminal, where you created the guide, run the following command to start running the website locally:
+
+bundle exec middleman
+
+Now, visit http://localhost:4567 to see the website.
+
+Run through the following checklist to make sure:
+
+that you can navigate to the guides and see your guide your guide indexed in the right tag group that you tagged your guide under.
+make sure it all looks good.
+make sure the spelling is correct.
+
 ## Developing
 
 Develop using:
@@ -71,10 +103,6 @@ Your website will be watched and hosted locally at **[http://localhost:4567/](ht
 We currently rely on a [Ruby Bootstrap gem](https://github.com/twbs/bootstrap-rubygem/tree/v4.0.0.alpha4) compiled with Bootstrap 4.0.0-alpha4.
 Relevant SASS files can be found [here](https://github.com/twbs/bootstrap-rubygem/tree/v4.0.0.alpha4/assets/stylesheets).
 
-## Disclaimer
-
-This bootstrapper was generalised from the [SplashKit](https://github.com/splashkit/splashkit.io) website. There may be some files lurking around that still reference SplashKit-specific details. You can ignore these.
-
 ## Publishing
 
 Publish using:
@@ -89,6 +117,8 @@ If this fails, try rebuilding the build folder from scratch then redeploy:
 $ rm -rf build
 $ rake publish
 ```
+
+Doubtfire is completely open source, and free to use — any contributions to the project are appreciated!
 
 ## License
 
