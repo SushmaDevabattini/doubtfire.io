@@ -66,9 +66,9 @@ author_url: a URL to your GitHub profile or personal website, and
 summary: a summary of the guide that should be no more than two to three lines and should embody the gist of the guide.
 
 ##Write the guide
-Underneath the bottom three dashes, you may begin writing your guide using Github-flavoured Markdown. You won’t need to add the title of the guide as a Heading 1 (<h1> or #) as this is automatically added for you.
+Underneath the bottom three dashes, you may begin writing your guide using Github-flavoured Markdown. You won’t need to add the title of the guide as a Heading 1( or #) as this is automatically added for you.
 
-**Note**: When writing your guide, ensure you only use Heading 2 to Heading 6 (<h2> … <h6> or ## … ######). This is because Heading 1 is reserved for the guide’s title.
+**Note**: When writing your guide, ensure you only use Heading 2 to Heading 6 (## … ######). This is because Heading 1 is reserved for the guide’s title.
 Remember to keep the language friendly, include examples and ensure it is high quality.
 
 If you would like to include images in your guide, host them on Imgur as this will ensure they exist permanently (unlike temporary image hosting services such as puush).
