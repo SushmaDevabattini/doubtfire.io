@@ -37,7 +37,7 @@ config to point to this install:
 $ brew install openssl
 $ bundle config build.eventmachine --with-cppflags="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib"
 ```
-## creating guides
+## Creating guides
 
 Guides are categorised using a tag. Once you have decided for one or more tag for your guide, execute the following command:
 
